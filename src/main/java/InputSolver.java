@@ -16,12 +16,13 @@ public class InputSolver {
     }
     public static void main(String[] args) throws IOException {
         var day = args[0];
-        var part = args[1];
+        var part = Integer.parseInt(args[1]);
+
         int result = 0;
         var input = readInput();
         switch (day) {
             case "1":
-                result= new One().solve(input);
+                result= new One().solve(input, part);
         }
         System.out.println(result);
     }
