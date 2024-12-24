@@ -23,6 +23,8 @@ public class InputSolver {
         switch (day) {
             case "1":
                 result= new One().solve(input, part);
+            case "2":
+
         }
         System.out.println(result);
     }
