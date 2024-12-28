@@ -4,7 +4,7 @@ import java.util.List;
 
 public class InputSolver {
     public static List<String> readInput() throws IOException {
-        var Fis = new FileInputStream("input.txt");
+        var Fis = new FileInputStream("threeInput.txt");
         var inputReader = new InputStreamReader(Fis);
         var reader = new BufferedReader(inputReader);
         List<String> inputList = new ArrayList<>();
@@ -23,7 +23,8 @@ public class InputSolver {
         switch (day) {
             case "1":
                 result= new One().solve(input, part);
-            case "2":
+            case "3":
+                result = new Three().solve(input, part);
 
         }
         System.out.println(result);
