@@ -1,10 +1,11 @@
 import java.io.*;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class InputSolver {
     public static List<String> readInput() throws IOException {
-        var Fis = new FileInputStream("fiveInput.txt");
+        var Fis = new FileInputStream("fourInput.txt");
         var inputReader = new InputStreamReader(Fis);
         var reader = new BufferedReader(inputReader);
         List<String> inputList = new ArrayList<>();
@@ -14,7 +15,7 @@ public class InputSolver {
         }
         return inputList;
     }
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException, NoSuchAlgorithmException {
         var day = args[0];
         var part = Integer.parseInt(args[1]);
 
@@ -25,6 +26,8 @@ public class InputSolver {
                 result= new One().solve(input, part);
             case "3":
                 result = new Three().solve(input, part);
+            case "4":
+                result = new Four().solve(input, part);
             case "5":
                 result = new Five().solve(input, part);
 
