@@ -35,7 +35,43 @@ public class Five {
             niceWordCounter++;
 
         }
-        return niceWordCounter;
+
+        if (part == 2) {
+            niceWordCounter = 0;
+
+            for (String input : lines) {
+                char[] arrChar = input.toCharArray();
+                boolean hasNoOverlappingPair = false;
+                for (int i = 0; i < arrChar.length - 1; i++) {
+                    String pair = "" + arrChar[i] + arrChar[i + 1];
+                    for (int j = i + 2; j < arrChar.length - 1; j++) {
+                        if (pair.equals("" + arrChar[j] + arrChar[j + 1])) {
+                            hasNoOverlappingPair = true;
+                            break;
+                        }
+                    }
+                    if (hasNoOverlappingPair){ break;}
+                }
+                if (!hasNoOverlappingPair) continue;
+
+
+                boolean hasRepeatingLetterWithGap = false;
+                for (int i = 0; i < arrChar.length - 2; i++) {
+                    if (arrChar[i] == arrChar[i + 2]) {
+                        hasRepeatingLetterWithGap = true;
+                        break;
+                    }
+                }
+                if (!hasRepeatingLetterWithGap) continue;
+
+
+                niceWordCounter++;
+            }
+
+
+        }
+    return niceWordCounter;
+
     }
 
 }

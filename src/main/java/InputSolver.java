@@ -5,7 +5,7 @@ import java.util.List;
 
 public class InputSolver {
     public static List<String> readInput() throws IOException {
-        var Fis = new FileInputStream("fourInput.txt");
+        var Fis = new FileInputStream("fiveInput.txt");
         var inputReader = new InputStreamReader(Fis);
         var reader = new BufferedReader(inputReader);
         List<String> inputList = new ArrayList<>();
